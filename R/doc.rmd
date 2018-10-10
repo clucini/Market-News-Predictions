@@ -12,8 +12,18 @@ library("dplyr")
 
 market_data <- read.csv("marketdata_sample.csv")
 news_data <- read.csv("news_sample.csv")
+news_data_narrow <- news_data %>%
+  select(
+    assetName,
+    sentimentPositive
+  )
+market_data_narrow <- market_data %>%
+  select(
+    assetName,
+    returnsClosePrevRaw1
+  )
 ```
 
 ```{r}
-summary(news_data)
+summary(market_data_narrow)
 ```
